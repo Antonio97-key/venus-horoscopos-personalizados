@@ -52,8 +52,8 @@ export default function SituationSelector({ onSubmit, lang }: SituationSelectorP
                     key={opt.id}
                     onClick={() => toggle(opt)}
                     className={`px-5 py-3 rounded-2xl text-sm md:text-base font-semibold transition-all flex items-center gap-3 border-2 ${isSelected
-                        ? 'bg-cosmic-gold/25 text-white border-cosmic-gold shadow-[0_0_20px_rgba(255,215,0,0.2)] scale-[1.05]'
-                        : 'bg-cosmic-navy/40 text-cosmic-soft border-white/5 hover:border-cosmic-gold/30'
+                      ? 'bg-cosmic-gold/25 text-white border-cosmic-gold shadow-[0_0_20px_rgba(255,215,0,0.2)] scale-[1.05]'
+                      : 'bg-cosmic-navy/40 text-cosmic-soft border-white/5 hover:border-cosmic-gold/30'
                       }`}
                   >
                     <span className="text-lg">{opt.icon}</span>
