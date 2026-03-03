@@ -1,3 +1,5 @@
+'use client';
+
 import { PLANS } from '@/lib/plans';
 import { Check, Sparkles } from 'lucide-react';
 import type { Language } from '@/lib/i18n';
@@ -10,13 +12,13 @@ interface PlanSelectorProps {
 export default function PlanSelector({ lang, currentPlan }: PlanSelectorProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
-      {PLANS.map((plan) => (
+      {PLANS.map((plan: any) => (
         <div 
           key={plan.id}
-          className={`relative p-6 rounded-3xl border transition-all ${
+          className={`relative p-6 rounded-3xl border transition-all duration-500 ${
             currentPlan === plan.id 
-              ? 'bg-cosmic-gold/10 border-cosmic-gold' 
-              : 'bg-white/[0.02] border-white/5 hover:border-white/10'
+              ? 'bg-cosmic-gold/10 border-cosmic-gold shadow-[0_0_30px_rgba(255,215,0,0.1)]' 
+              : 'bg-white/[0.02] border-white/5 hover:border-cosmic-gold/30'
           }`}
         >
           {plan.id !== 'normal' && (
@@ -34,8 +36,8 @@ export default function PlanSelector({ lang, currentPlan }: PlanSelectorProps) {
           </p>
 
           <ul className="space-y-3">
-            {plan.benefits.map((benefit) => (
-              <li key={benefit.es} className="flex gap-2 text-xs text-cosmic-soft leading-tight">
+            {plan.benefits.map((benefit: any, idx: number) => (
+              <li key={idx} className="flex gap-3 text-xs text-cosmic-soft leading-tight">
                 <Check className="w-4 h-4 text-cosmic-gold shrink-0" />
                 <span>{lang === 'es' ? benefit.es : benefit.en}</span>
               </li>

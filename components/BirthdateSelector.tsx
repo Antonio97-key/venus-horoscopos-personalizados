@@ -25,7 +25,7 @@ export default function BirthdateSelector({ onSubmit, lang }: BirthdateSelectorP
 
   return (
     <div className="w-full max-w-md animate-slide-up">
-      <div className="card-cosmic rounded-3xl p-8 glow-gold relative overflow-hidden">
+      <div className="card-cosmic rounded-3xl p-8 glow-gold relative overflow-hidden bg-cosmic-navy/40 backdrop-blur-xl border border-white/10 shadow-2xl">
         <div className="absolute top-0 right-0 p-4 opacity-10">
           <Star className="w-24 h-24 text-cosmic-gold" />
         </div>
@@ -53,7 +53,7 @@ export default function BirthdateSelector({ onSubmit, lang }: BirthdateSelectorP
                 value={day}
                 onChange={(e) => setDay(e.target.value)}
                 placeholder="DD"
-                className="input-cosmic w-full px-4 py-4 rounded-2xl text-center text-lg font-bold"
+                className="w-full px-4 py-4 rounded-2xl text-center text-lg font-bold bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cosmic-gold/50"
               />
             </div>
             <div className="space-y-2">
@@ -66,7 +66,7 @@ export default function BirthdateSelector({ onSubmit, lang }: BirthdateSelectorP
                 value={month}
                 onChange={(e) => setMonth(e.target.value)}
                 placeholder="MM"
-                className="input-cosmic w-full px-4 py-4 rounded-2xl text-center text-lg font-bold"
+                className="w-full px-4 py-4 rounded-2xl text-center text-lg font-bold bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cosmic-gold/50"
               />
             </div>
             <div className="space-y-2">
@@ -79,17 +79,17 @@ export default function BirthdateSelector({ onSubmit, lang }: BirthdateSelectorP
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
                 placeholder="AAAA"
-                className="input-cosmic w-full px-4 py-4 rounded-2xl text-center text-lg font-bold"
+                className="w-full px-4 py-4 rounded-2xl text-center text-lg font-bold bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-cosmic-gold/50"
               />
             </div>
           </div>
 
           <button
             type="submit"
-            className="btn-primary w-full py-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-lg group active:scale-[0.98] transition-all"
+            className="w-full py-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-lg bg-cosmic-gold text-cosmic-darkest hover:opacity-90 active:scale-[0.98] transition-all"
           >
             <span>{t.continue}</span>
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ChevronRight className="w-5 h-5" />
           </button>
         </form>
       </div>

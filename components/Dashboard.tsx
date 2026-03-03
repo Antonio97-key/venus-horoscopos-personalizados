@@ -28,7 +28,7 @@ export default function Dashboard({ userData, onReset, lang, onLangChange }: Das
     <div className="min-h-screen flex flex-col bg-cosmic-darkest">
       <Header lang={lang} onLangChange={onLangChange} />
       
-      <main className="flex-1 max-w-4xl mx-auto w-full pt-8 pb-32">
+      <main className="flex-1 max-w-4xl mx-auto w-full pt-28 pb-32">
         {activeTab === 'today' && (
           <div className="px-6 space-y-8 animate-fade-in">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-l-4 border-cosmic-gold pl-6 py-2">
@@ -64,65 +64,43 @@ export default function Dashboard({ userData, onReset, lang, onLangChange }: Das
         )}
 
         {activeTab === 'oraculo' && (
-          <div className="px-6 space-y-8 animate-fade-in pb-12">
-            <div className="text-center space-y-3">
-              <h2 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">
-                {t.oracle_title}
-              </h2>
-              <p className="text-cosmic-soft text-lg md:text-xl max-w-md mx-auto leading-relaxed">
-                {t.oracle_subtitle}
-              </p>
-            </div>
-
-            <div className="card-cosmic rounded-3xl p-8 glow-gold text-center border-2 border-cosmic-gold/20 shadow-2xl">
-              <div className="text-6xl mb-6 drop-shadow-[0_0_15px_rgba(255,215,0,0.5)] animate-pulse">🔮</div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                {lang === 'es' ? 'Portal del Conocimiento' : 'Portal of Knowledge'}
-              </h3>
-              <p className="text-cosmic-soft mb-8">
-                {lang === 'es' 
-                  ? 'Desbloquea el poder de la IA estelar para consultas personalizadas.' 
-                  : 'Unlock the power of stellar AI for personalized consultations.'}
-              </p>
-              <PlanSelector lang={lang} currentPlan={userData.plan} />
+          <div className="px-6 space-y-8 animate-fade-in pb-12 text-center">
+            <h2 className="font-display text-4xl font-bold text-white tracking-tight">{t.oracle_title}</h2>
+            <div className="p-10 rounded-3xl bg-white/5 border border-white/10 shadow-xl">
+               <div className="text-5xl mb-6">🔮</div>
+               <p className="text-cosmic-soft mb-8 leading-relaxed max-w-md mx-auto">{t.oracle_subtitle}</p>
+               <PlanSelector lang={lang} currentPlan={userData.plan} />
             </div>
           </div>
         )}
 
         {activeTab === 'history' && (
-          <div className="px-6 h-[40vh] flex flex-center text-center animate-fade-in">
-             <div className="m-auto space-y-4 opacity-40">
-                <div className="w-16 h-16 rounded-full border-2 border-dashed border-cosmic-gold/30 flex items-center justify-center mx-auto">
-                   <div className="w-8 h-8 rounded-full bg-cosmic-gold/20" />
-                </div>
-                <p className="text-cosmic-soft text-sm italic font-medium">
-                  {lang === 'es' ? 'Tu historia estelar comienza hoy...' : 'Your stellar history begins today...'}
-                </p>
+          <div className="px-6 text-center py-20 opacity-50 flex flex-col items-center justify-center">
+             <div className="w-16 h-16 rounded-full border-2 border-dashed border-cosmic-gold/30 mb-4 flex items-center justify-center">
+               <div className="w-8 h-8 rounded-full bg-cosmic-gold/20" />
              </div>
+             <p className="text-cosmic-soft italic">
+               {lang === 'es' ? 'Tu historia estelar comienza hoy...' : 'Your stellar history begins today...'}
+             </p>
           </div>
         )}
 
         {activeTab === 'profile' && (
           <div className="px-6 space-y-8 animate-fade-in">
-            <div className="card-cosmic rounded-3xl p-8 border border-white/5 shadow-xl">
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cosmic-navy to-cosmic-darkest border border-cosmic-gold/30 flex items-center justify-center text-3xl shadow-inner">
-                     👤
-                  </div>
+                  <div className="w-16 h-16 rounded-2xl bg-cosmic-gold/20 flex items-center justify-center text-3xl">👤</div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">{t.dashboard_welcome}</h3>
+                    <h3 className="text-xl font-bold text-white uppercase">{userData.sign}</h3>
                     <p className="text-cosmic-gold text-xs font-black uppercase tracking-widest">{t.dashboard_plan}: {userData.plan}</p>
                   </div>
                </div>
-
-               <div className="space-y-3">
-                  <button 
-                    onClick={onReset}
-                    className="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm font-bold hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 transition-all flex items-center justify-center gap-2"
-                  >
-                    {t.reset_birthdate}
-                  </button>
-               </div>
+               <button 
+                 onClick={onReset}
+                 className="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-white text-sm font-bold hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-400 transition-all flex items-center justify-center gap-2"
+               >
+                 {t.reset_birthdate}
+               </button>
             </div>
           </div>
         )}

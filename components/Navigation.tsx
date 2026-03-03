@@ -1,3 +1,5 @@
+'use client';
+
 import { Star, History, Sparkles, User } from 'lucide-react';
 import { getTranslation } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
@@ -12,10 +14,10 @@ export default function Navigation({ activeTab, setActiveTab, lang }: Navigation
   const t = getTranslation(lang);
 
   const tabs = [
-    { id: 'today', icon: Star, label: t.tab_today },
-    { id: 'oracle', icon: Sparkles, label: t.tab_oracle },
-    { id: 'history', icon: History, label: t.tab_history },
-    { id: 'profile', icon: User, label: t.tab_profile },
+    { id: 'today', icon: Star, label: t.tab_today || 'Hoy' },
+    { id: 'oraculo', icon: Sparkles, label: t.tab_oracle || 'Oráculo' },
+    { id: 'history', icon: History, label: t.tab_history || 'Historial' },
+    { id: 'profile', icon: User, label: t.tab_profile || 'Perfil' },
   ];
 
   return (

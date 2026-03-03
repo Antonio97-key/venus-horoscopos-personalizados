@@ -14,24 +14,18 @@ export default function WelcomeScreen({ onStart, lang, onLangChange }: WelcomeSc
   const t = getTranslation(lang);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-cosmic-darkest">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden bg-cosmic-darkest">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
         <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-cosmic-navy/30 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-cosmic-purple/20 rounded-full blur-[120px] animate-pulse" />
       </div>
 
       <div className="relative z-10 w-full max-w-lg text-center space-y-12 animate-fade-in">
-        {/* Logo Section */}
         <div className="space-y-6">
           <div className="relative inline-block">
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-cosmic-gold/40 glow-gold mx-auto bg-cosmic-navy shadow-2xl">
-              <img
-                src="/venuz-logo.png"
-                alt="VENUS"
-                className="w-full h-full object-cover scale-110"
-              />
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-cosmic-gold/40 glow-gold mx-auto bg-cosmic-navy shadow-2xl flex items-center justify-center">
+              <img src="/venus-logo.png" alt="VENUS" className="w-full h-full object-cover scale-110" />
             </div>
             <div className="absolute -bottom-2 -right-2 bg-cosmic-gold text-cosmic-darkest p-2 rounded-full shadow-lg">
               <Sparkles className="w-4 h-4" />
@@ -39,7 +33,7 @@ export default function WelcomeScreen({ onStart, lang, onLangChange }: WelcomeSc
           </div>
 
           <div className="space-y-2">
-            <h1 className="font-display text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none text-shadow-gold">
+            <h1 className="font-display text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
               VENUS
             </h1>
             <p className="text-cosmic-gold font-black uppercase tracking-[0.4em] text-xs md:text-sm opacity-80">
@@ -48,11 +42,10 @@ export default function WelcomeScreen({ onStart, lang, onLangChange }: WelcomeSc
           </div>
         </div>
 
-        {/* Start Button */}
         <div className="space-y-6">
            <button
              onClick={onStart}
-             className="btn-primary w-full py-5 rounded-3xl flex items-center justify-center gap-3 font-black text-xl shadow-2xl group active:scale-[0.98] transition-all"
+             className="w-full py-5 rounded-3xl flex items-center justify-center gap-3 font-black text-xl bg-cosmic-gold text-cosmic-darkest shadow-2xl group active:scale-[0.98] transition-all hover:bg-white hover:text-cosmic-darkest"
            >
              <span>{t.start}</span>
              <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
@@ -78,7 +71,6 @@ export default function WelcomeScreen({ onStart, lang, onLangChange }: WelcomeSc
            </div>
         </div>
 
-        {/* Footer badges */}
         <div className="flex justify-center gap-8 opacity-40">
            <div className="flex flex-col items-center gap-2">
               <div className="w-10 h-10 rounded-xl border border-white/20 flex items-center justify-center">✨</div>
