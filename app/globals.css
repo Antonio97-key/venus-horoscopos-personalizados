@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Outfit';
+  src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700;900&display=swap');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cosmic-navy: #0a0e1a;
+  --cosmic-darkest: #05070a;
+  --cosmic-gold: #e2b714;
+  --cosmic-gold-soft: #f4d03f;
+  --cosmic-soft: #94a3b8;
+  --cosmic-purple: #2d1b4d;
+}
+
+@layer base {
+  body {
+    @apply bg-cosmic-darkest text-cosmic-soft font-sans antialiased;
+    background-image: 
+      radial-gradient(circle at 50% -20%, var(--cosmic-purple) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(226, 183, 20, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .card-cosmic {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300;
+  }
+  
+  .glow-gold {
+    @apply shadow-[0_0_40px_rgba(226,183,20,0.1)];
+  }
+
+  .btn-primary {
+    @apply bg-cosmic-gold text-cosmic-darkest hover:bg-cosmic-gold-soft transition-all duration-300 shadow-[0_0_20px_rgba(226,183,20,0.3)];
+  }
+
+  .input-cosmic {
+    @apply bg-white/5 border border-white/10 rounded-2xl focus:border-cosmic-gold/50 focus:ring-1 focus:ring-cosmic-gold/50 transition-all outline-none;
+  }
+  
+  .text-shadow-gold {
+    text-shadow: 0 0 15px rgba(226, 183, 20, 0.4);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
