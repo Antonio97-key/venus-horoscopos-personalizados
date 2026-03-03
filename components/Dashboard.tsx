@@ -6,6 +6,8 @@ import Navigation from './Navigation';
 import HoroscopeCard from './HoroscopeCard';
 import PlanSelector from './PlanSelector';
 import { generateHoroscope } from '@/lib/horoscope';
+import { getDailyEducationalItems } from '@/lib/educational';
+import EducationalSection from './EducationalSection';
 import { getTranslation } from '@/lib/i18n';
 import type { Language } from '@/lib/i18n';
 
@@ -23,6 +25,10 @@ export default function Dashboard({ userData, onReset, lang, onLangChange }: Das
   const horoscope = useMemo(() => {
     return generateHoroscope(userData, lang);
   }, [userData, lang]);
+
+  const educationalItems = useMemo(() => {
+    return getDailyEducationalItems(userData.sign, new Date().toISOString().split('T')[0], userData.situations);
+  }, [userData.sign, userData.situations]);
 
   return (
     <div className="min-h-screen flex flex-col bg-cosmic-darkest">
@@ -71,6 +77,20 @@ export default function Dashboard({ userData, onReset, lang, onLangChange }: Das
               <p className="text-cosmic-soft mb-8 leading-relaxed max-w-md mx-auto">{t.oracle_subtitle}</p>
               <PlanSelector lang={lang} currentPlan={userData.plan} />
             </div>
+          </div>
+        )}
+
+        {activeTab === 'educational' && (
+          <div className="px-6 space-y-8 animate-fade-in pb-12">
+            <div className="border-l-4 border-cosmic-gold pl-6 py-2 mb-8">
+              <p className="text-cosmic-gold text-xs uppercase tracking-[0.3em] font-black mb-1">
+                {t.tab_educational}
+              </p>
+              <h2 className="text-3xl md:text-5xl font-display font-black text-white tracking-tighter">
+                {lang === 'es' ? 'Sabiduría Cósmica' : 'Cosmic Wisdom'}
+              </h2>
+            </div>
+            <EducationalSection items={educationalItems} />
           </div>
         )}
 
