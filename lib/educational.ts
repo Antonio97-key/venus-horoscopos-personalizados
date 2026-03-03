@@ -1,5 +1,3 @@
-import type { Situation } from './storage';
-
 export interface EducationalItem {
   id: string;
   title: string;
@@ -65,8 +63,8 @@ function pickMany<T>(arr: T[], count: number, random: () => number): T[] {
 export function getDailyEducationalItems(sign: string, date: string, situations: any[]): EducationalItem[] {
   const baseSeed =
     parseInt(date.replace(/-/g, ''), 10) +
-    sign.split('').reduce((a, c) => a + c.charCodeAt(0), 0) +
-    (situations || []).reduce((a, s) => a + (s.id?.length || 0), 0);
+    (sign || 'Aries').split('').reduce((a, c) => a + c.charCodeAt(0), 0) +
+    (situations || []).reduce((a, s) => a + (typeof s === 'string' ? s.length : (s.id?.length || 0)), 0);
   const random = seededRandom(baseSeed);
   return pickMany(BASE_ITEMS, 3, random);
 }

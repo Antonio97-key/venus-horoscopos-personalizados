@@ -12,4 +12,5 @@ export function storeUser(data: any) {
 export function clearStoredUser() {
   if (typeof window === 'undefined') return;
   localStorage.removeItem('venus_user_data');
+  localStorage.removeItem('horoscopo_history');
 }

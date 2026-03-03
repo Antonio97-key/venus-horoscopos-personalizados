@@ -7,14 +7,17 @@ import BirthdateSelector from '@/components/BirthdateSelector';
 import SituationSelector from '@/components/SituationSelector';
 import Dashboard from '@/components/Dashboard';
 import { getStoredUser, storeUser, clearStoredUser } from '@/lib/storage';
+import { getSignFromDate } from '@/lib/zodiac';
 import type { Language } from '@/lib/i18n';
 
 export default function Home() {
   const [step, setStep] = useState<'welcome' | 'birthdate' | 'situations' | 'dashboard'>('welcome');
   const [userData, setUserData] = useState<any>(null);
   const [lang, setLang] = useState<Language>('es');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const savedLang = localStorage.getItem('venus_lang') as Language;
     if (savedLang) setLang(savedLang);
 
@@ -32,8 +35,11 @@ export default function Home() {
 
   const handleStart = () => setStep('birthdate');
 
-  const handleBirthdateSubmit = (data: any) => {
-    setUserData({ ...data });
+  const handleBirthdateSubmit = (data: { day: string; month: string; year: string }) => {
+    const d = parseInt(data.day, 10);
+    const m = parseInt(data.month, 10);
+    const sign = getSignFromDate(d, m);
+    setUserData({ ...data, sign, plan: 'normal' });
     setStep('situations');
   };
 
@@ -49,6 +55,8 @@ export default function Home() {
     setUserData(null);
     setStep('welcome');
   };
+
+  if (!mounted) return null;
 
   return (
     <main className="min-h-screen bg-cosmic-darkest text-white selection:bg-cosmic-gold/30">

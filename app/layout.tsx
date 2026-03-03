@@ -14,10 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="dark">
-      <body className="antialiased font-sans">
+      <body className="antialiased font-sans bg-cosmic-darkest">
         <div className="starfield fixed inset-0 pointer-events-none z-0" />
-        <main className="relative z-10 min-h-screen pb-20">{children}</main>
-        <Footer />
+        <div className="relative z-10 min-h-screen">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
