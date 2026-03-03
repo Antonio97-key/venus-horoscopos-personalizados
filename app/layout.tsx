@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Footer from '@/components/Footer';
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'VENUS Horóscopos Personalizados | Tu horóscopo único cada día',
