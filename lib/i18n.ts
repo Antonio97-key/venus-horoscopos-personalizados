@@ -2,8 +2,8 @@ export type Language = 'es' | 'en';
 
 export const i18n = {
     es: {
-        welcome: 'Bienvenido/a a VENUS',
-        tagline: 'Tu guía cósmica personalizada',
+        welcome: 'Bienvenido/a a VENUS HOROSCOPOS PERSONALIZADOS',
+        tagline: 'Tu guía cósmica de alta precisión',
         start: 'Comenzar mi viaje',
         birthdate_title: '¿Cuándo naciste?',
         birthdate_subtitle: 'Usaremos tu fecha de nacimiento para calcular tu signo y personalizar tu horóscopo.',
@@ -22,8 +22,8 @@ export const i18n = {
         tab_oracle: 'Oráculo',
         tab_educational: 'Aprender',
         tab_profile: 'Perfil',
-        oracle_title: 'El Oráculo de VENUS',
-        oracle_subtitle: 'Consulta a las estrellas con IA avanzada',
+        oracle_title: 'El Oráculo de VENUS HOROSCOPOS PERSONALIZADOS',
+        oracle_subtitle: 'Consulta a las estrellas con IA avanzada y precisión galáctica',
         select_plan: 'Selecciona tu Plan de Ascensión',
         plan_normal: 'Normal',
         plan_vip: 'VIP Estelar',
@@ -42,8 +42,8 @@ export const i18n = {
         time: 'Hora local',
     },
     en: {
-        welcome: 'Welcome to VENUS',
-        tagline: 'Your personalized cosmic guide',
+        welcome: 'Welcome to VENUS HOROSCOPOS PERSONALIZADOS',
+        tagline: 'Your high-precision cosmic guide',
         start: 'Start my journey',
         birthdate_title: 'When were you born?',
         birthdate_subtitle: 'We will use your birth date to calculate your sign and personalize your horoscope.',
@@ -62,8 +62,8 @@ export const i18n = {
         tab_oracle: 'Oracle',
         tab_educational: 'Learn',
         tab_profile: 'Profile',
-        oracle_title: 'The VENUS Oracle',
-        oracle_subtitle: 'Consult the stars with advanced AI',
+        oracle_title: 'The Oráculo of VENUS HOROSCOPOS PERSONALIZADOS',
+        oracle_subtitle: 'Consult the stars with advanced AI and galactic precision',
         select_plan: 'Select your Ascension Plan',
         plan_normal: 'Normal',
         plan_vip: 'Stellar VIP',
