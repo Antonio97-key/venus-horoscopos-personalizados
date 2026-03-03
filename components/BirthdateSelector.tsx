@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Calendar, ChevronRight, Star } from 'lucide-react';
-import { getTranslation } from '@/lib/i18n';
-import type { Language } from '@/lib/i18n';
+import { getTranslation } from '../lib/i18n';
+import type { Language } from '../lib/i18n';
 
 interface BirthdateSelectorProps {
     onSubmit: (data: { day: string; month: string; year: string }) => void;
@@ -70,7 +70,7 @@ export default function BirthdateSelector({ onSubmit, lang }: BirthdateSelectorP
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-[10px] uppercase tracking-widest text-cosmic-gold font-bold ml-1">{t.month}</label>
+                            <label className="text-[10px] uppercase tracking-widest text-cosmic-gold font-bold ml-1">{t.year}</label>
                             <input
                                 type="number"
                                 min="1900"

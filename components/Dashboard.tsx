@@ -5,11 +5,11 @@ import Header from './Header';
 import Navigation from './Navigation';
 import HoroscopeCard from './HoroscopeCard';
 import PlanSelector from './PlanSelector';
-import { generateHoroscope } from '@/lib/horoscope';
-import { getDailyEducationalItems } from '@/lib/educational';
+import { generateHoroscope } from '../lib/horoscope';
+import { getDailyEducationalItems } from '../lib/educational';
 import EducationalSection from './EducationalSection';
-import { getTranslation } from '@/lib/i18n';
-import type { Language } from '@/lib/i18n';
+import { getTranslation } from '../lib/i18n';
+import type { Language } from '../lib/i18n';
 
 interface DashboardProps {
   userData: any;

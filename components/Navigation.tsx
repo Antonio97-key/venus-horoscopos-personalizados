@@ -1,8 +1,8 @@
 'use client';
 
 import { Star, History, Sparkles, User, BookOpen } from 'lucide-react';
-import { getTranslation } from '@/lib/i18n';
-import type { Language } from '@/lib/i18n';
+import { getTranslation } from '../lib/i18n';
+import type { Language } from '../lib/i18n';
 
 interface NavigationProps {
   activeTab: string;

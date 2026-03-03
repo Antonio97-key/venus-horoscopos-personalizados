@@ -1,7 +1,7 @@
 'use client';
 
 import { Heart, Briefcase, Activity, Lightbulb } from 'lucide-react';
-import type { Language } from '@/lib/i18n';
+import type { Language } from '../lib/i18n';
 
 interface HoroscopeCardProps {
   horoscope: {

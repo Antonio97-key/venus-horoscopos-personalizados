@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { SITUATION_OPTIONS, SITUATION_CATEGORIES } from '@/lib/situations';
+import { SITUATION_OPTIONS, SITUATION_CATEGORIES } from '../lib/situations';
 import { ChevronRight, CheckCircle2 } from 'lucide-react';
-import { getTranslation, type Language } from '@/lib/i18n';
+import { getTranslation, type Language } from '../lib/i18n';
 
 interface SituationSelectorProps {
   onSubmit: (situations: string[]) => void;

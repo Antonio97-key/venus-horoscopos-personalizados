@@ -1,8 +1,8 @@
 'use client';
 
 import { Star, Sparkles, ChevronRight, Globe } from 'lucide-react';
-import { getTranslation } from '@/lib/i18n';
-import type { Language } from '@/lib/i18n';
+import { getTranslation } from '../lib/i18n';
+import type { Language } from '../lib/i18n';
 
 interface WelcomeScreenProps {
   onStart: () => void;

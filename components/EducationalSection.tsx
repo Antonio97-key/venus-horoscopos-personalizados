@@ -1,7 +1,7 @@
 'use client';
 
 import { BookOpen, Lightbulb, Sparkles, Wind } from 'lucide-react';
-import type { EducationalItem } from '@/lib/educational';
+import type { EducationalItem } from '../lib/educational';
 
 interface EducationalSectionProps {
     items: EducationalItem[];
