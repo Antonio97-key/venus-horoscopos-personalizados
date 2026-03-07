@@ -33,6 +33,9 @@ export const SITUATION_OPTIONS: SituationOption[] = [
   { id: 'divorciado', label: 'Divorciado/a', category: 'sentimental', icon: '🕊️' },
   { id: 'viudo', label: 'Viudo/a', category: 'sentimental', icon: '🕊️' },
   { id: 'ruptura', label: 'Pasando por ruptura o crisis de pareja', category: 'sentimental', icon: '💔' },
+  { id: 'compromiso', label: 'Planeando compromiso o boda', category: 'sentimental', icon: '💎' },
+  { id: 'nueva-relacion', label: 'En una relación nueva', category: 'sentimental', icon: '🌱' },
+  { id: 'relacion-distancia', label: 'Relación a distancia', category: 'sentimental', icon: '🌍' },
   // Laboral
   { id: 'empleado-fijo', label: 'Trabajando (empleado fijo)', category: 'laboral', icon: '💼' },
   { id: 'freelance', label: 'Trabajando (freelance / autónomo)', category: 'laboral', icon: '🖥️' },
@@ -42,6 +45,9 @@ export const SITUATION_OPTIONS: SituationOption[] = [
   { id: 'emprendiendo', label: 'Emprendiendo un negocio propio', category: 'laboral', icon: '🚀' },
   { id: 'estudiando', label: 'Estudiando / formándome', category: 'laboral', icon: '📚' },
   { id: 'jubilado', label: 'Jubilado/a', category: 'laboral', icon: '🌅' },
+  { id: 'promocion-laboral', label: 'Buscando promoción o ascenso', category: 'laboral', icon: '📈' },
+  { id: 'conflictos-trabajo', label: 'Conflictos en el lugar de trabajo', category: 'laboral', icon: '⚡' },
+  { id: 'nuevo-trabajo', label: 'Comenzando en un nuevo trabajo', category: 'laboral', icon: '🎉' },
   // Planes
   { id: 'proyectos-personales', label: 'Nuevos proyectos personales', category: 'planes', icon: '🎯' },
   { id: 'mudarme', label: 'Planeando mudarme de ciudad/país', category: 'planes', icon: '🏠' },
@@ -49,6 +55,9 @@ export const SITUATION_OPTIONS: SituationOption[] = [
   { id: 'planes-viaje', label: 'Tengo planes de viaje', category: 'planes', icon: '🧳' },
   { id: 'planes-estudios', label: 'Tengo planes de estudios', category: 'planes', icon: '📖' },
   { id: 'mejorar-salud', label: 'Quiero mejorar mi salud / bienestar', category: 'planes', icon: '🌿' },
+  { id: 'buscando-empleo', label: 'Buscando nuevas oportunidades', category: 'planes', icon: '🔭' },
+  { id: 'cambios-importantes', label: 'Por cambios importantes en mi vida', category: 'planes', icon: '🌪️' },
+  { id: 'nueva-etapa', label: 'Iniciando una nueva etapa', category: 'planes', icon: '🚪' },
   // Familiar
   { id: 'viviendo-padres', label: 'Viviendo con mis padres', category: 'familiar', icon: '👨‍👩‍👧' },
   { id: 'viviendo-solo', label: 'Viviendo solo/a', category: 'familiar', icon: '🏡' },
@@ -57,6 +66,12 @@ export const SITUATION_OPTIONS: SituationOption[] = [
   { id: 'problemas-hijo', label: 'Problemas con un hijo/a', category: 'familiar', icon: '🫶' },
   { id: 'cuidando-familiar', label: 'Cuidando de un familiar enfermo', category: 'familiar', icon: '🤝' },
   { id: 'problemas-familiares', label: 'Problemas familiares recientes', category: 'familiar', icon: '💫' },
+  { id: 'problemas-legales-familiar', label: 'Problemas legales con algún familiar', category: 'familiar', icon: '⚖️' },
+  { id: 'problemas-legales-hijo', label: 'Problemas legales con un hijo/hija', category: 'familiar', icon: '👨‍👧‍⚖️' },
+  { id: 'problemas-legales-hermano', label: 'Problemas legales con hermano/a', category: 'familiar', icon: '👫⚖️' },
+  { id: 'problemas-legales-padres', label: 'Problemas legales con madre/padre', category: 'familiar', icon: '👨‍👩‍👧⚖️' },
+  { id: 'rinya-familiar', label: 'Riña con algún familiar', category: 'familiar', icon: '💢' },
+  { id: 'problemas-legales-vecino', label: 'Problemas legales con vecino/a', category: 'familiar', icon: '🏠⚖️' },
   // Emocional
   { id: 'optimista', label: 'Me siento optimista', category: 'emocional', icon: '😊' },
   { id: 'ansioso', label: 'Me siento ansioso/a', category: 'emocional', icon: '😰' },
