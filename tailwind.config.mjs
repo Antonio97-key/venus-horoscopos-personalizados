@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -27,7 +26,7 @@ module.exports = {
       backgroundImage: {
         'cosmic-gradient': 'linear-gradient(135deg, #0a0a12 0%, #16213e 50%, #0f0f1a 100%)',
         'nebula': 'radial-gradient(ellipse at 50% 0%, rgba(83,52,131,0.3) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(0,217,255,0.1) 0%, transparent 40%)',
-        'starfield': 'radial-gradient(2px 2px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent)',
+        'starfield': 'radial-gradient(2px 2px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 40px 70px,255,255, rgba(255,0.8), transparent)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
